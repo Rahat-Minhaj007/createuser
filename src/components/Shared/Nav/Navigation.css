@@ -1,0 +1,12 @@
+.a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: white;
+    margin: auto;
+    display: block;
+}
+.a:hover::after {
+    width: 100%;
+    transition: width 0.3s linear;
+}
