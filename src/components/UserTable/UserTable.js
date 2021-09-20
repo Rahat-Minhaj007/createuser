@@ -10,7 +10,7 @@ const UserTable = ({ setEditData }) => {
   const { state, dispatch } = useContext(UserContext);
   const { userList } = state;
   const [passVisible, setPassVisible] = useState(false);
-  const [clickedPass, setClickedPass] = useState(null);
+  // const [clickedPass, setClickedPass] = useState(null);
 
   const handleDelete = (id) => {
 
@@ -51,12 +51,14 @@ const UserTable = ({ setEditData }) => {
                     <td>{data?.userName}</td>
                     <td>{data?.email}</td>
                     <td>
-                      {passVisible && clickedPass === data?.id ? data?.password : "******"} <FontAwesomeIcon
+                      {<input value={data?.password} type={`${passVisible ? "text" : "password"}`} />} <FontAwesomeIcon
                         style={{ cursor: "pointer", paddingLeft: "10px", fontSize: "25px" }}
-                        icon={passVisible && clickedPass === data?.id ? faEyeSlash : faEye}
+                        icon={passVisible ? faEyeSlash : faEye}
+                        // icon={passVisible && clickedPass === data?.id? faEyeSlash : faEye}
+                        // data?.password : "******"
                         onClick={() => {
                           setPassVisible(!passVisible);
-                          setClickedPass(data.id)
+                          // setClickedPass(data.id)
                         }}
                       />
                     </td>

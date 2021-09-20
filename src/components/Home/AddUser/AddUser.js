@@ -22,6 +22,10 @@ const AddUser = ({ editData, setEditData }) => {
 
     };
 
+
+
+
+
     if (editData.update !== true) {
       dispatch({
         type: 'ADD_USER',
@@ -32,10 +36,9 @@ const AddUser = ({ editData, setEditData }) => {
     } else if (editData.update === true) {
       dispatch({
         type: 'UPDATE',
-        payload: userData
+        payload: { ...userData, id: editData.id }
       })
-
-      e.target.reset();
+      setEditData("");
     }
 
   };
@@ -98,7 +101,7 @@ const AddUser = ({ editData, setEditData }) => {
 
           <input
             name="password"
-            type="text"
+            type="password"
             placeholder="Password"
             ref={register({ required: true, maxLength: 6 })}
             defaultValue={`${editData.update ? editData.password : ""}`}
