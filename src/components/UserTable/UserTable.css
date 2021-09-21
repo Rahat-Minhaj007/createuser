@@ -1,0 +1,8 @@
+.password-field input {
+    border: none !important;
+    outline: none !important;
+    background: rgba(0, 0, 0, 0.01);
+    color: white;
+    width: 65px;
+    text-align: center;
+}

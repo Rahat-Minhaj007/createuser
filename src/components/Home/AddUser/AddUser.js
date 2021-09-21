@@ -38,7 +38,8 @@ const AddUser = ({ editData, setEditData }) => {
         type: 'UPDATE',
         payload: { ...userData, id: editData.id }
       })
-      setEditData("");
+      setEditData({});
+      e.target.reset();
     }
 
   };
